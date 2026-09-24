@@ -2,11 +2,55 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yingke Demo</title>
-  <meta http-equiv="refresh" content="0; url=./app.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>影壳 Demo</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <p><a href="./app.html">Open Yingke Demo</a></p>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">影</span>
+        <div><strong>影壳</strong><small>个人壳 · Demo</small></div>
+      </div>
+      <nav id="navCats"></nav>
+      <div class="sidebar-foot">
+        <p>壳只认统一 JSON</p>
+        <button type="button" id="btnArchitecture">看架构</button>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <input id="search" type="search" placeholder="搜索…" autocomplete="off" />
+        <div class="source-pills" id="sourcePills"></div>
+      </header>
+      <section id="hero" class="hero"></section>
+      <section id="gridWrap">
+        <h2 id="gridTitle">全部</h2>
+        <div id="grid" class="grid"></div>
+      </section>
+    </main>
+  </div>
+  <div id="detail" class="modal hidden"></div>
+  <div id="playerModal" class="modal hidden">
+    <div class="player-box">
+      <div class="player-bar">
+        <button type="button" id="closePlayer">关闭</button>
+        <span id="playerTitle"></span>
+        <select id="lineSelect"></select>
+      </div>
+      <video id="video" controls playsinline></video>
+      <p class="hint" id="playerHint"></p>
+    </div>
+  </div>
+  <div id="archModal" class="modal hidden">
+    <div class="arch-card">
+      <button type="button" class="x" id="closeArch">×</button>
+      <h3>架构</h3>
+      <pre class="arch">壳 + data.js 片源（公开测试片）</pre>
+    </div>
+  </div>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
